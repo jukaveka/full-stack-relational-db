@@ -1,0 +1,28 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/jukaveka/full-stack-relational-db#readme",
+  "bugs": {
+    "url": "https://github.com/jukaveka/full-stack-relational-db/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jukaveka/full-stack-relational-db.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "pg": "^8.23.1",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
