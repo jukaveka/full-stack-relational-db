@@ -1,0 +1,8 @@
+@blog_id = REPLACE_WITH_BLOG_ID
+
+PUT http://localhost:3001/api/blogs/{{blog_id}}
+Content-Type: application/json
+
+{
+  "likes": 2
+}
