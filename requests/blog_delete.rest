@@ -1,0 +1,3 @@
+@blog_id = REPLACE_WITH_BLOD_ID
+
+DELETE http://localhost:3001/api/blogs/{{blog_id}}

@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+  "author": "Nick Sturdivant",
+  "url": "https://blogs.perficient.com/replacing-postman-with-the-rest-client-visual-studio-code-extension/",
+  "title": "Replacing Postman with the REST Client Visual Studio Code Extension"
+}
