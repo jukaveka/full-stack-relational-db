@@ -8,38 +8,23 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  try {
-    const blog = await Blog.create(req.body)
-    return res.json(blog)
-  } catch (error) {
-    console.log(error)
-    return res.status(400).json({ error })
-  }
+  const blog = await Blog.create(req.body)
+  return res.json(blog)
 })
 
 router.delete('/:id', async (req, res) => {
-  try {
-    const blog = await Blog.findByPk(req.params.id)
-    if (blog) {
-      await blog.destroy()
-    }
-    return res.status(204).end()
-  } catch (error) {
-    console.log(error)
-    return res.status(400).json({ error })
+  const blog = await Blog.findByPk(req.params.id)
+  if (blog) {
+    await blog.destroy()
   }
+  return res.status(204).end()
 })
 
 router.put('/:id', async (req, res) => {
-  try {
-    const blog = await Blog.findByPk(req.params.id)
-    blog.likes = req.body.likes
-    blog.save()
-    return res.json(blog)
-  } catch (error) {
-    console.log(`Couldn't update likes for blog id ${req.params.id}`)
-    return res.status(400).end()
-  }
+  const blog = await Blog.findByPk(req.params.id)
+  blog.likes = req.body.likes
+  await blog.save()
+  return res.json(blog)
 })
 
 module.exports = router
