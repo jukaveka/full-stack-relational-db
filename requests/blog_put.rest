@@ -1,8 +1,9 @@
 @blog_id = REPLACE_WITH_BLOG_ID
+@likes = REPLACE_WITH_BLOG_LIKES
 
 PUT http://localhost:3001/api/blogs/{{blog_id}}
 Content-Type: application/json
 
 {
-  "likes": 2
+  "likes": {{likes}}
 }

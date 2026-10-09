@@ -1,6 +1,6 @@
-@author = "Nick Sturdivant"
-@url = "https://blogs.perficient.com/replacing-postman-with-the-rest-client-visual-studio-code-extension/"
-@title = "Replacing Postman with the REST Client Visual Studio Code Extension"
+@author = "REPLACE_WITH_BLOG_AUTHOR"
+@url = "REPLACE_WITH_BLOG_URL"
+@title = "REPLACE_WITH_BLOG_TITLE"
 
 
 POST http://localhost:3001/api/blogs
