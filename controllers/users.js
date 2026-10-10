@@ -31,4 +31,17 @@ router.post("/", async (req, res) => {
   return res.json(user)
 })
 
+router.put("/:username", async (req, res) => {
+  const user = await User.findOne({
+    where: { 
+      username: req.params.username 
+    }
+  })
+
+  user.name = req.body.name
+  await user.save()
+
+  return res.json(user)
+})
+
 module.exports = router

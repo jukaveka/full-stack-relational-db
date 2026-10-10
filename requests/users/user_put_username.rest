@@ -1,0 +1,9 @@
+@username = REPLACE_WITH_USERNAME
+@name = "REPLACE_WITH_NAME"
+
+PUT http://localhost:3001/api/users/{{username}}
+Content-Type: application/json
+
+{
+  "name": {{name}}
+}
