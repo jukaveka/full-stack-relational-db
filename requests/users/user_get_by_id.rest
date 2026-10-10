@@ -1,0 +1,3 @@
+@user_id = REPLACE_WITH_USER_ID
+
+GET http://localhost:3001/api/users/{{user_id}}

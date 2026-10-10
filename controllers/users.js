@@ -44,4 +44,9 @@ router.put("/:username", async (req, res) => {
   return res.json(user)
 })
 
+router.get("/:id", async (req, res) => {
+  const user = await User.findByPk(req.params.id)
+  return res.json(user)
+})
+
 module.exports = router
