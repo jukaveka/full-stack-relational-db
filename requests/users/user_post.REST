@@ -1,0 +1,12 @@
+@username = "REPLACE_WITH_USERNAME"
+@name = "REPLACE_WITH_NAME"
+@password = "REPLACE_WITH_PASSWORD"
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": {{username}},
+  "name": {{name}},
+  "password": {{password}}
+}
