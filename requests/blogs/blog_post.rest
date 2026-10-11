@@ -1,10 +1,12 @@
 @author = "REPLACE_WITH_BLOG_AUTHOR"
 @url = "REPLACE_WITH_BLOG_URL"
 @title = "REPLACE_WITH_BLOG_TITLE"
+@token = REPLACE_WITH_TOKEN
 
 
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
   "author": {{author}},

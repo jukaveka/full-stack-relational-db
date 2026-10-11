@@ -1,14 +1,18 @@
 const express = require('express')
 const router = express.Router()
-const { Blog } = require('../models')
+
+const { Blog, User } = require('../models')
+const tokenExtractor = require('../middleware/tokenExtractor')
+
 
 router.get('/', async (req, res) => {
   const blogs = await Blog.findAll();
   return res.json(blogs)
 })
 
-router.post('/', async (req, res) => {
-  const blog = await Blog.create(req.body)
+router.post('/', tokenExtractor, async (req, res) => {
+  const user = await User.findOne({ where: { username: req.decodedToken.username }})
+  const blog = await Blog.create({...req.body, "userId": user.id})
   return res.json(blog)
 })
 
