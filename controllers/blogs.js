@@ -16,11 +16,18 @@ router.post('/', tokenExtractor, async (req, res) => {
   return res.json(blog)
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', tokenExtractor, async (req, res) => {
+  const user = await User.findByPk(req.decodedToken.id)
   const blog = await Blog.findByPk(req.params.id)
+
+  if (user.id !== blog.userId) {
+    return res.status(401).end()
+  }
+
   if (blog) {
     await blog.destroy()
   }
+
   return res.status(204).end()
 })
 
