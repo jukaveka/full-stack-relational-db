@@ -7,11 +7,11 @@ const { generateHash } = require("../util/hash")
 
 router.get("/", async (req, res) => {
   const users = await User.findAll({
-    attributes: {
-      exclude: ["userId"]
-    },
     include: {
-      model: Blog
+      model: Blog,
+      attributes: {
+        exclude: ["userId"]
+      }
     }
   })
 
