@@ -9,15 +9,21 @@ const blogsRouter = require('./controllers/blogs')
 const userRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
 const authorRouter = require('./controllers/authors')
+const resetRouter = require('./controllers/reset')
 
 const errorHandler = require('./middleware/errorHandler')
 
 app.use(express.json())
 
+app.get("/", (req, res) => {
+  return res.status(200).end()
+})
+
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/authors', authorRouter)
+app.use('/api/reset', resetRouter)
 
 app.use(errorHandler)
 
