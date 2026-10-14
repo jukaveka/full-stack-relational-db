@@ -1,6 +1,7 @@
 @author = "REPLACE_WITH_BLOG_AUTHOR"
 @url = "REPLACE_WITH_BLOG_URL"
 @title = "REPLACE_WITH_BLOG_TITLE"
+@year = REPLACE_WITH_YEAR
 @token = REPLACE_WITH_TOKEN
 
 
@@ -11,5 +12,6 @@ Authorization: Bearer {{token}}
 {
   "author": {{author}},
   "url": {{url}},
-  "title": {{title}}
+  "title": {{title}},
+  "year": {{year}}
 }
