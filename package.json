@@ -16,9 +16,9 @@
   "main": "index.js",
   "scripts": {
     "test": "TESTING=true node --test --test-concurrency=1 tests/api_ch3.test.js",
-    "start": "node index.js",
+    "start": "TESTING=false node index.js",
     "start:test": "TESTING=true node index.js",
-    "dev": "node --watch index.js"
+    "dev": "TESTING=false node --watch index.js"
   },
   "dependencies": {
     "axios": "^1.20.0",
@@ -27,7 +27,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.23.1",
-    "sequelize": "^6.37.8"
+    "sequelize": "^6.37.8",
+    "umzug": "^3.8.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
