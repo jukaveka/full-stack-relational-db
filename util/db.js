@@ -19,6 +19,7 @@ const connectToDatabase = async () => {
     console.log(`Connection formed to database`)
   } catch (error) {
     console.log(`Unable to form connection to database`)
+    console.log(error)
     return process.exit(1)
   }
 
