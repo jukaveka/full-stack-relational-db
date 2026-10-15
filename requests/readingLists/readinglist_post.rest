@@ -1,0 +1,10 @@
+@user_id = REPLACE_WITH_USER_ID
+@blog_id = REPLACE_WITH_BLOG_ID
+
+POST http://localhost:3001/api/readinglists
+Content-Type: application/json
+
+{
+  "user_id": {{user_id}},
+  "blog_id": {{blog_id}}
+}

@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize')
 
 migration = {
   up: async ({ context: queryInterface }) => {
-    await queryInterface.createTable('reading_list', {
+    await queryInterface.createTable('reading_lists', {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
