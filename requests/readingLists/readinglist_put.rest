@@ -1,0 +1,11 @@
+@reading_list_entry_id = REPLACE_WITH_READING_LIST_ENTRY_ID
+@read = REPLACE_WITH_READ_BOOLEAN_STATE
+@token = REPLACE_WITH_TOKEN
+
+PUT http://localhost:3001/api/readinglists/{{reading_list_entry_id}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "read": {{read}}
+}
