@@ -16,7 +16,8 @@ ReadingList.init({
     references: { model: 'users', key: 'id' },
     validate: {
       isInt: true
-    }
+    },
+    onDelete: "CASCADE"
   },
   blogId: {
     type: DataTypes.INTEGER,
@@ -24,7 +25,8 @@ ReadingList.init({
     references: { model: 'blogs', key: 'id' },
     validate: {
       isInt: true
-    }
+    },
+    onDelete: "CASCADE"
   },
   read: {
     type: DataTypes.BOOLEAN,
