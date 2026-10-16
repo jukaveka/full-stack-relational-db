@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { Blog, User } = require('../models')
+const { Blog, User, Session } = require('../models')
 const tokenExtractor = require('../middleware/tokenExtractor')
 const { Op } = require('sequelize')
 
@@ -36,8 +36,8 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', tokenExtractor, async (req, res) => {
-  const user = await User.findOne({ where: { username: req.decodedToken.username }})
-  const blog = await Blog.create({...req.body, "userId": user.id})
+  const session = await Session.findOne({ where: { token: req.token, active: true }})
+  const blog = await Blog.create({...req.body, "userId": session.userId})
   return res.json(blog)
 })
 
