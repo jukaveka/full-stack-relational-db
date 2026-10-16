@@ -15,7 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "TESTING=true node --test --test-concurrency=1 tests/api_ch3.test.js",
+    "test": "TESTING=true node --test --test-concurrency=1",
     "start": "TESTING=false node index.js",
     "start:test": "TESTING=true node index.js",
     "dev": "TESTING=false node --watch index.js",
