@@ -6,11 +6,12 @@ const sessionChecker = require("../middleware/sessionChecker")
 
 
 router.post("/", async (req, res) => {
-  const readingList = await ReadingList.create({
-    'userId': req.body.user_id,
-    'blogId': req.body.blog_id
+  const readingListEntry = await ReadingList.create({
+    'userId': req.body.userId,
+    'blogId': req.body.blogId
   })
-  return res.json(readingList)
+
+  return res.json(readingListEntry)
 })
 
 router.put("/:id", sessionChecker, async (req, res) => {
