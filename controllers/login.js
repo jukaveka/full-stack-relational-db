@@ -28,17 +28,13 @@ router.post("/", async (req, res) => {
 
   const token = jwt.sign(userToken, SECRET)
 
-  try {
-    await Session.create({
-      userId: user.id,
-      token: token,
-      active: true
-    })
-  } catch (error) {
-    return res.status(500).json({ error: "Issues with creating session" })
-  }
+  await Session.create({
+    userId: user.id,
+    token: token,
+    active: true
+  })
 
-  return res.status(200).send({ token, username: user.username, name: user.username})
+  return res.status(200).send({ token, username: user.username, name: user.name})
 })
 
 
