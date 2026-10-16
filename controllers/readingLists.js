@@ -19,10 +19,10 @@ router.put("/:id", sessionChecker, async (req, res) => {
 
   if (readingListEntry) {
     if (readingListEntry.userId !== req.session.userId) {
-      return res.status(403).end()
+      return res.status(401).end()
     }
 
-    readingListEntry.read = true
+    readingListEntry.read = req.body.read
     readingListEntry.save()
     return res.json(readingListEntry)
   } else {
