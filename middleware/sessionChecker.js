@@ -11,7 +11,7 @@ const sessionChecker = async (req, res, next) => {
   const session = await Session.findOne({ where: { token: token, active: true }})
 
   if (session) {
-    req.session = { userId: session.userId }
+    req.session = { token: session.token, userId: session.userId }
   } else {
     return res.status(401).json({ error: "token invalid" })
   }

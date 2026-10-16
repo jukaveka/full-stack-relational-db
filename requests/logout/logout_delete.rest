@@ -1,0 +1,4 @@
+@token = REPLACE_WITH_TOKEN
+
+DELETE http://localhost:3001/api/logout
+Authorization: Bearer {{token}}
