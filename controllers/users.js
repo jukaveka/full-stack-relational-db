@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 
-const { User, Blog, ReadingList } = require("../models")
+const { User, Blog } = require("../models")
 
 const { generateHash } = require("../util/hash")
 
@@ -48,7 +48,6 @@ router.get("/:id", async (req, res) => {
   const where = {}
 
   if (req.query.read && ["true", "false"].includes(req.query.read)) {
-    console.log("Setting where.read value")
     where.read = req.query.read
   }
 

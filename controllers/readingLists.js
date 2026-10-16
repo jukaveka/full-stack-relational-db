@@ -16,11 +16,11 @@ router.post("/", async (req, res) => {
 router.put("/:id", tokenExtractor, async (req, res) => {
   const readingListEntry = await ReadingList.findByPk(req.params.id)
 
-  if (readingListEntry.userId !== req.decodedToken.id) {
-    return res.status(403).end()
-  }
-
   if (readingListEntry) {
+    if (readingListEntry.userId !== req.decodedToken.id) {
+      return res.status(403).end()
+    }
+
     readingListEntry.read = true
     readingListEntry.save()
     return res.json(readingListEntry)
