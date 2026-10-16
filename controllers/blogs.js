@@ -45,14 +45,14 @@ router.delete('/:id', tokenExtractor, async (req, res) => {
   const session = await Session.findOne({ where: { token: req.token, active: true }})
 
   if (!session) {
-    return res.status(403).end()
+    return res.status(401).end()
   }
 
   const blog = await Blog.findByPk(req.params.id)
 
   if (blog) {
     if (session.userId !== blog.userId) {
-      return res.status(401).end()
+      return res.status(403).end()
     }
 
     await blog.destroy()
